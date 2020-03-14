@@ -449,39 +449,12 @@
 <script>
     const tiresSizingTable = document.getElementById('tiresSizingTable');
     
-    // вставляем таблицу скриптом, "чтобы гугл бот не видел ее"
+    // вставляем таблицу скриптом, "чтобы гугл бот не видел ее" 
     
     tiresSizingTable.innerHTML = '<table width="640" class="withlines" border="0" cellspacing="1" cellpadding="3" align="center" style="margin-bottom:20px;"><tbody><tr class = "tabSize"><th rowspan="2" >Rim size</th><th colspan="7">Section width:</th></tr><tr class="mainCol"><th>195</th><th>205</th><th>+10: 215</th><th>+20: 225</th><th>+30: 235</th><th>+40: 245</th></tr><tr><th valign="top" class="mobFixed">16"</th><td valign="top" nowrap=""><a href="">195/50-16</a> <small>30mm -</small><br><a href="">195/55-16</a> <small>12mm -</small><br><a href="">195/60-16</a> <small>8mm+</small><br></td><td valign="top" nowrap=""><a href="">205/50-16</a> <small>20mm -</small><br><a href="">205/55-16</a><br><a href="">205/60-16</a> <small>3%+</small><br><a href="">205/65-16</a> <small>40mm+</small><br></td><td valign="top" nowrap=""><a href="">215/50-16</a> <small>10mm -</small><br><a href="">215/55-16</a> <small>10mm+</small><br><a href="">215/60-16</a> <small>32mm+</small><br></td><td valign="top" nowrap=""><a href="">225/50-16</a><br><a href="">225/55-16</a> <small>22mm+</small><br><a href="">225/60-16</a> <small>44mm+</small><br></td><td valign="top" nowrap=""><a href="">235/55-16</a><small>32mm+</small><br></td><td valign="top" nowrap=""><a href="">245/50-16</a> <small>3%+</small><br></td></tr><tr><th valign="top" class="mobFixed">+1: 17"</th><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap=""><a href="">205/45-17</a> <small>16mm -</small><br><a href="">205/50-17</a> <small>6mm+</small><br><a href="">205/55-17</a> <small>26mm+</small><br></td><td valign="top" nowrap=""><a href="">215/40-17</a> <small>28mm -</small><br><a href="">215/45-17</a> <small>6mm -</small><br><a href="">215/50-17</a> <small>16mm+</small><br><a href="">215/55-17</a> <small>36mm+</small><br></td><td valign="top" nowrap=""><a href="">225/45-17</a><br><a href="">225/50-17</a> <small>26mm+</small><br><a href="">225/55-17</a> <small>48mm+</small><br></td><td valign="top" nowrap=""><a href="">235/40-17</a> <small>12mm -</small><br><a href="">235/45-17</a> <small>12mm+</small><br><a href="">235/50-17</a> <small>36mm+</small><br></td><td valign="top" nowrap=""><a href="">245/40-17</a><br><a href="">245/45-17</a> <small>3%+</small><br><a href="">245/50-17</a> <small>46mm+</small><br></td></tr><tr><th valign="top" class="mobFixed">+2: 18"</th><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap=""><a href="">205/40-18</a> <small>11mm -</small><br></td><td valign="top" nowrap=""><a href="">215/35-18</a> <small>25mm -</small><br><a href="">215/40-18</a><br><a href="">215/45-18</a> <small>19mm+</small><br></td><td valign="top" nowrap=""><a href="">225/35-18</a> <small>17mm -</small><br><a href="">225/40-18</a> <small>5mm+</small><br><a href="">225/45-18</a> <small>27mm+</small><br></td><td valign="top" nowrap=""><a href="">235/40-18</a> <small>13mm+</small><br><a href="">235/45-18</a> <small>37mm+</small><br></td><td valign="top" nowrap=""><a href="">245/35-18</a><br><a href="">245/40-18</a> <small>21mm+</small><br><a href="">245/45-18</a> <small>45mm+</small><br></td></tr><tr><th valign="top" class="mobFixed">+3: 19"</th><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap=""><a href="">215/35-19</a><br></td><td valign="top" nowrap=""><a href="">225/35-19</a> <small>9mm+</small><br><a href="">225/40-19</a> <small>31mm+</small><br></td><td valign="top" nowrap=""><a href="">235/35-19</a> <small>15mm+</small><br><a href="">235/40-19</a> <small>39mm+</small><br></td><td valign="top" nowrap=""><a href="">245/35-19</a> <small>23mm+</small><br><a href="">245/40-19</a> <small>47mm+</small><br></td></tr><tr><th valign="top" class="mobFixed">+4: 20"</th><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap="">&nbsp;</td><td valign="top" nowrap=""><a href="">225/30-20</a> <small>12mm+</small><br><a href="">225/35-20</a> <small>34mm+</small><br></td><td valign="top" nowrap=""><a href="">235/30-20</a> <small>18mm+</small><br><a href="">235/35-20</a> <small>40mm+</small><br></td><td valign="top" nowrap=""><a href="">245/30-20</a> <small>24mm+</small><br><a href="">245/35-20</a> <small>48mm+</small><br></td></tr></tbody></table>';
     
     const tiresSizingTableTr = tiresSizingTable.querySelectorAll('tr');
-    const tiresSizingTableTd = tiresSizingTable.querySelectorAll('td');
-    const everySecondTr = [];
     const attribures = ['195', '205', '+10: 215', '+20: 225', '+30: 235', '+40: 245'];
-    
-    for(let i = 0; i < tiresSizingTableTr.length; i+=2){
-        everySecondTr.push(tiresSizingTableTr[i]);
-    }
-    
-    setStyle(tiresSizingTableTr, 'border', '1px solid #e3e3e3');
-    setStyle(tiresSizingTableTd, 'border', '1px solid #e3e3e3');
-    setStyle(everySecondTr, 'background', 'whitesmoke');
-    
-    // функция для изменения стиля селектора (цвет, бордер, фон)
-    // Пример: если нужно изменить цвет на зеленый у опр. элементов, получаем их js-ом, затем вызываем setStyle(наш_селектор, 'color', 'green');
-    
-    function setStyle(selector, style, color) {
-        const aLength = selector.length;
-        for(let i = 0; i < aLength; i++) {
-            switch(style) {
-                case 'border': selector[i].style.border = color;
-                break;
-                case 'color': selector[i].style.color = color;
-                break;
-                case 'background': selector[i].style.background = color;
-                break;
-            }
-        }
-    }
     
     for(let i = 2; i < tiresSizingTableTr.length; i++) {
         const chidrens = tiresSizingTableTr[i].childNodes.length - 1;
@@ -490,13 +463,16 @@
         }
     }
     
-    // примеры цветов
-    tiresSizingTableTd[0].firstElementChild.classList.add('greenColor');
-    tiresSizingTableTd[1].firstElementChild.classList.add('orangeColor');
-    tiresSizingTableTd[2].firstElementChild.classList.add('redColor');
-    
 </script>
 <style>
+    #tiresSizingTable tr, #tiresSizingTable td {
+        border: 1px solid #e3e3e3;
+    }
+    
+    #tiresSizingTable tr:nth-child(2n) {
+        background: whitesmoke;
+    }
+    
     .greenColor {
         color: green;
     }
@@ -528,60 +504,61 @@
     }
     
     @media screen and (max-width: 600px) {
-    .mobFixed {
-        position: sticky;
-        left: 45%;
-        top: 0;
-        padding: 0 5px;
-        white-space: nowrap;
-    }
-      table {
-        border: 0;
-      }
+        .mobFixed {
+            position: sticky;
+            left: 45%;
+            top: 0;
+            padding: 0 5px;
+            white-space: nowrap;
+        }
 
-      table caption {
-        font-size: 1.3em;
-      }
+         #tiresSizingTable {
+            border: 0;
+        }
 
-      table thead {
-        border: none;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-      }
+         #tiresSizingTable caption {
+            font-size: 1.3em;
+        }
 
-      table tr {
-        border-bottom: 3px solid #ddd;
-        display: block;
-        margin-bottom: .625em;
-      }
+         #tiresSizingTable thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
 
-      table td {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        font-size: .8em;
-        text-align: right;
-      }
+         #tiresSizingTable tr {
+            border-bottom: 3px solid #ddd;
+            display: block;
+            margin-bottom: .625em;
+        }
 
-      table td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
+         #tiresSizingTable td {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: .8em;
+            text-align: right;
+        }
 
-      table td:last-child {
-        border-bottom: 0;
-      }
-        
-      .mainCol {
-        display: none;
-      }
-        
+         #tiresSizingTable td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+         #tiresSizingTable td:last-child {
+            border-bottom: 0;
+        }
+
+        .mainCol {
+            display: none !important;
+        }
+
         .tabSize {
             position: sticky;
             top: 0;
@@ -589,25 +566,107 @@
             color: transparent;
             height: 30px;
             line-height: 30px;
+            border-style: none !important;
+            padding-left: 10px;
+            background: #fff;
         }
-        
+
         .tabSize:before {
             color: #000;
             content: 'Rim size | Section width'
         }
-        
+
         #tiresSizingTable td {
             font-size: 1.3em;
             padding: 5px;
         }
-        
+
         #tiresSizingTable td small {
             padding: 2px;
         }
-        
+
         #tiresSizingTable tr th {
             font-size: 1.3em;
         }
-}
+        
+        #tiresSizingTable tr:nth-child(2n) {
+            background: transparent;
+        }
+        
+        #tiresSizingTable td:nth-child(2n) {
+            background: whitesmoke;
+        }
+        
+    }
 </style>
+    
+    
+
+<!--
+<table width="640" class="withlines" border="0" cellspacing="1" cellpadding="3" align="center" style="margin-bottom:20px;">
+   <tbody>
+      <tr class = "tabSize">
+         <th rowspan="2" >Rim size</th>
+         <th colspan="7">Section width:</th>
+      </tr>
+      <tr class="mainCol">
+         <th>195</th>
+         <th>205</th>
+         <th>+10: 215</th>
+         <th>+20: 225</th>
+         <th>+30: 235</th>
+         <th>+40: 245</th>
+      </tr>
+      <tr>
+         <th valign="top" class="mobFixed">16"</th>
+         <td valign="top" nowrap=""><a href="">195/50-16</a> <small>30mm -</small><br><a href="">195/55-16</a> <small>12mm -</small><br><a href="">195/60-16</a> <small>8mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">205/50-16</a> <small>20mm -</small><br><a href="">205/55-16</a><br><a href="">205/60-16</a> <small>3%+</small><br><a href="">205/65-16</a> <small>40mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">215/50-16</a> <small>10mm -</small><br><a href="">215/55-16</a> <small>10mm+</small><br><a href="">215/60-16</a> <small>32mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">225/50-16</a><br><a href="">225/55-16</a> <small>22mm+</small><br><a href="">225/60-16</a> <small>44mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">235/55-16</a><small>32mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">245/50-16</a> <small>3%+</small><br></td>
+      </tr>
+      <tr>
+         <th valign="top" class="mobFixed">+1: 17"</th>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap=""><a href="">205/45-17</a> <small>16mm -</small><br><a href="">205/50-17</a> <small>6mm+</small><br><a href="">205/55-17</a> <small>26mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">215/40-17</a> <small>28mm -</small><br><a href="">215/45-17</a> <small>6mm -</small><br><a href="">215/50-17</a> <small>16mm+</small><br><a href="">215/55-17</a> <small>36mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">225/45-17</a><br><a href="">225/50-17</a> <small>26mm+</small><br><a href="">225/55-17</a> <small>48mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">235/40-17</a> <small>12mm -</small><br><a href="">235/45-17</a> <small>12mm+</small><br><a href="">235/50-17</a> <small>36mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">245/40-17</a><br><a href="">245/45-17</a> <small>3%+</small><br><a href="">245/50-17</a> <small>46mm+</small><br></td>
+      </tr>
+      <tr>
+         <th valign="top" class="mobFixed">+2: 18"</th>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap=""><a href="">205/40-18</a> <small>11mm -</small><br></td>
+         <td valign="top" nowrap=""><a href="">215/35-18</a> <small>25mm -</small><br><a href="">215/40-18</a><br><a href="">215/45-18</a> <small>19mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">225/35-18</a> <small>17mm -</small><br><a href="">225/40-18</a> <small>5mm+</small><br><a href="">225/45-18</a> <small>27mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">235/40-18</a> <small>13mm+</small><br><a href="">235/45-18</a> <small>37mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">245/35-18</a><br><a href="">245/40-18</a> <small>21mm+</small><br><a href="">245/45-18</a> <small>45mm+</small><br></td>
+      </tr>
+      <tr>
+         <th valign="top" class="mobFixed">+3: 19"</th>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap=""><a href="">215/35-19</a><br></td>
+         <td valign="top" nowrap=""><a href="">225/35-19</a> <small>9mm+</small><br><a href="">225/40-19</a> <small>31mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">235/35-19</a> <small>15mm+</small><br><a href="">235/40-19</a> <small>39mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">245/35-19</a> <small>23mm+</small><br><a href="">245/40-19</a> <small>47mm+</small><br></td>
+      </tr>
+      <tr>
+         <th valign="top" class="mobFixed">+4: 20"</th>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap="">&nbsp;</td>
+         <td valign="top" nowrap=""><a href="">225/30-20</a> <small>12mm+</small><br><a href="">225/35-20</a> <small>34mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">235/30-20</a> <small>18mm+</small><br><a href="">235/35-20</a> <small>40mm+</small><br></td>
+         <td valign="top" nowrap=""><a href="">245/30-20</a> <small>24mm+</small><br><a href="">245/35-20</a> <small>48mm+</small><br></td>
+      </tr>
+   </tbody>
+</table>
+-->
+
+
+    
+    
 </html>
